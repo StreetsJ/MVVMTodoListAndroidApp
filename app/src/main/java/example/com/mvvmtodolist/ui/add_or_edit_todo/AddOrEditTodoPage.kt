@@ -62,7 +62,7 @@ fun AddOrEditTodoPage(
                     viewModel.onEvent(AddOrEditTodoEvent.OnDescriptionChange(newDescription))
                 },
                 placeholder = {
-                    Text(text = "Title")
+                    Text(text = "Description")
                 },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = false,

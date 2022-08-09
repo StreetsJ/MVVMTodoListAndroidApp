@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import example.com.mvvmtodolist.data.Todo
@@ -28,7 +29,7 @@ fun TodoItem(
         Column(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.Start
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
@@ -44,7 +45,6 @@ fun TodoItem(
                 }
             }
             todo.description?.let {
-                Spacer(modifier = Modifier.height(8.dp))
                 Text(text = todo.description)
             }
         }
@@ -60,4 +60,10 @@ fun TodoItem(
             }
         )
     }
+}
+
+@Preview
+@Composable
+fun TodoItemPreview() {
+    TodoItem(todo = Todo("Hello World", "Descritpion", isDone = false), onEvent = {})
 }
